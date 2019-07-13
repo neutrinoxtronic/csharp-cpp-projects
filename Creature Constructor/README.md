@@ -18,7 +18,7 @@ The project can be extended through addition of more creatures body parts from [
 
 ## Sample Output:
            
-```bash
+```shell
 $ dotnet run                                       
 Welcome to the ASCII Art Creature                  
 Construct a random creature? [y/n]                 
@@ -34,7 +34,7 @@ y
     '~~~~~'                                        
 ```
 
-```bash
+```shell
 $ dotnet run                                       
 Welcome to the ASCII Art Creature Constructor!     
 Construct a random creature? [y/n]                 
@@ -58,7 +58,7 @@ bug
    """" """"                                       
 ```
 
-```bash
+```shell
 $ dotnet run                                       
 Welcome to the ASCII Art Creature Constructor!     
 Construct a random creature? [y/n]                 
