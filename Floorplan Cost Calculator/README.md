@@ -7,4 +7,7 @@ A commandline c# calculator that calculates area of a floorplan and returns its 
 - Accepting a currency and calculating the cost in that currency.
 - Any other extensions to the calculator based on the area as an input.
 
+## Usage
 
+1. `dotnet run`.
+2. Select any of the given options to calculate the cost in pesos.
