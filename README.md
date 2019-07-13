@@ -1,6 +1,6 @@
 # C# and C++ Projects
 
-Collection of small csharp projects such as calculators, applications and experiments
+Collection of small C# and C++ projects such as calculators, applications and experiments
 
 ---
 
