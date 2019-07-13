@@ -1,6 +1,6 @@
 using System;
 
-namespace ExquisiteCorpse
+namespace CreatureConstructor
 {
   class Program
   {
