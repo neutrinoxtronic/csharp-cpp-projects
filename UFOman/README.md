@@ -4,9 +4,13 @@ A hangman-like game in which players must crack a codeword to stop an alien abdu
 
 ## Usage
 
-In each game there are 10 randomly selected codewords to guess. In each round, you can guess the characters that make up the codeword. Feel free to guess more than one character in each round but know that each character guess equals one round.
+In each game a random codeword is selected from a collection of ten words. In each round, you can guess the characters that make up the codeword. Feel free to guess more than one character in each round but know that each character guess equals one round. But, be aware! You can only make 6 incorrect guesses.
 
 > Hint: All codewords are space related.
+
+## Extension
+
+If you would like to increase the number of codewords that you want to play with, simply add them to the codewords vector in `ufo.cpp`.
 
 ## Sample Output
 
