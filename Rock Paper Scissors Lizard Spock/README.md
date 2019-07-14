@@ -5,7 +5,8 @@ See this video from Big Bang Theory for the rules of the game: [Rock Paper Sciss
 
 ## Usage
 
-Choose one of the options from rock, paper, scissors, lizard and spock.
+1. Set a winning target to get to.
+2. Choose one of the options from rock, paper, scissors, lizard and spock to try and win the computer.
 
 ## Sample Output
 
