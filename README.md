@@ -25,6 +25,10 @@ A command line c++ application that asks you a few questions to determine the ho
 A command line C++ application similar to rock paper scissors game but with lizard and spock added in.
 See this video from Big Bang Theory for the rules of the game: [Rock Paper Scissors Lizard Spock (Extended Cut) ~ The Big Bang Theory ~](https://www.youtube.com/watch?v=x5Q6-wMx-K8)
 
+## C++ Project - UFOMan
+
+A hangman-like game in which players must crack a codeword to stop an alien abduction.
+
 ## Setup
 
 1. Clone the repository using `git clone https://github.com/Ali-Parandeh/csharp-projects.git`
