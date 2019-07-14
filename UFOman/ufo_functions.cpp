@@ -6,10 +6,10 @@
 // Function to greet the user
 void greet()
 {
-  std::cout << "=============";
-  std::cout << "UFO: The Game";
-  std::cout << "=============";
-  std::cout << "Instructions: save your friend from alien abduction by guessing the letters in the codeword.";
+  std::cout << "\n=============\n";
+  std::cout << "UFO: The Game\n";
+  std::cout << "=============\n";
+  std::cout << "\nInstructions: save your friend from alien abduction by guessing the letters in the codeword.";
 }
 
 // Function to invoke endgame
