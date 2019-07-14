@@ -1,6 +1,6 @@
 using System;
 
-namespace ArchitectArithmetic
+namespace Floorplan_Cost_Calculator
 {
   class Program
   {

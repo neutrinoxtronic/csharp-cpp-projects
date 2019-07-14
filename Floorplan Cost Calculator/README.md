@@ -11,3 +11,16 @@ A commandline c# calculator that calculates area of a floorplan and returns its 
 
 1. `dotnet run`.
 2. Select any of the given options to calculate the cost in pesos.
+
+
+```
+Select from one of the following plans:
+
+Teotihaucan
+Taj Mahal
+Al-Masjid al-haram
+
+Taj Mahal
+
+The total cost of the Taj Mahal is 748510782.02 pesos
+```
