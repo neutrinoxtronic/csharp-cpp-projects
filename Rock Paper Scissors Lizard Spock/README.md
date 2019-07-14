@@ -55,9 +55,7 @@ And the result is as follows: You Win!
 ```                                                                
 =================================                                             
 rock paper scissors Lizard Spock!                                             
-=================================                                             
-                                                                          
-Game Starting.                                                                
+=================================                                                              
 1) ✊                                                                          
 2) ✋                                                                          
 3) ✌️                                                                          
