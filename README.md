@@ -18,7 +18,7 @@ A command line c++ application that calculates the roots of a quadratic equation
 
 ## C++ Project - Harry Potter Sorting Hat Quiz
 
-A command line c++ application that asks you a few questions to tell you which house you belongs to if you were to go to Hogwarts.
+A command line c++ application that asks you a few questions to determine the house you belong to if you were to go to Hogwarts.
 
 ## C++ Project - Rock Paper Scissors Lizard Spock
 
