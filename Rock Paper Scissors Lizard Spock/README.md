@@ -25,10 +25,7 @@ INVALID INPUT. TRY AGAIN.
 ```                                                                   
 =================================                                             
 rock paper scissors Lizard Spock!                                             
-=================================                                             
-Set a winning target.                                                         
-2                                                                             
-Game Starting.                                                                
+=================================                                                                     
 1) ✊                                                                          
 2) ✋                                                                          
 3) ✌️                                                                          
@@ -43,8 +40,7 @@ And the result is as follows: You Lose!
 ```                                                                    
 =================================                                             
 rock paper scissors Lizard Spock!                                             
-=================================                                                                                                                       
-Game Starting.                                                                
+=================================                                   
 1) ✊                                                                          
 2) ✋                                                                          
 3) ✌️                                                                          
