@@ -6,7 +6,7 @@ Collection of small C# and C++ projects such as calculators, applications and ex
 
 ## C# Project - Floorplan Cost Calculator
 
-A commandline c# calculator that calculates area of a floorplan and returns its cost. Application currently supports 3 pre-defined floorplans but can be generalised by:
+A commandline c# calculator that calculates area of a floorplan and returns its cost. Application currently supports 3 pre-defined floorplans but can be expanded further. See project specific README for details.
 
 ## C# Project - Creature Constructor
 
