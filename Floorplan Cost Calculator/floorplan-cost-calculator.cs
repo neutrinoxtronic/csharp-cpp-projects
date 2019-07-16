@@ -6,16 +6,16 @@ namespace Floorplan_Cost_Calculator
   {
     public static void Main(string[] args)
     {
-      double totalarea = CalculateArea();
+      double totalarea = CalculateTotalArea();
       CalculateTotalCost(totalarea);
     }
 
-    static double CalculateArea()
+    static double CalculateTotalArea()
     {
-      Console.WriteLine("Starting Area Calculator...");
-      Console.WriteLine("How many rectangles (R), Trianges (T) and Circles (C) does your area have and what are the sizes of each?");
-      Console.WriteLine("Input your answer in the following format: R(x1,y1) R(x2,y2) ... T(b1, h1) T(b2,h2) ... C(r1) C(r2)");
-      Console.WriteLine("Please note all units shall be in meters");
+      Console.WriteLine("Starting Area Calculator...\n");
+      Console.WriteLine("How many rectangles (R), Trianges (T) and Circles (C) does your area have and what are the sizes of each?\n");
+      Console.WriteLine("Input your answer in the following format: R(x1,y1) R(x2,y2) ... T(b1, h1) T(b2,h2) ... C(r1) C(r2)\n");
+      Console.WriteLine("Please note all units shall be in meters. \n\n");
       string instruction = Console.ReadLine();
       string pattern1 = "[RTC]\(\d+\s*,\s*\d+\)";
       string pattern2 = "\d+";
@@ -43,12 +43,14 @@ namespace Floorplan_Cost_Calculator
             num_list = NumListGenerator(Match match1, string pattern2);
             sumArea += Circle(Int32.Parse(num_list[0]));
           default:
-            Console.WriteLine("Invalid Input. Try Again");
+            Console.WriteLine("Invalid Input. Try Again\n");
             break;
         }
       }
       
-      Console.WriteLine($"The total area of your floorplan is {sumArea}.");
+      Console.WriteLine($"\nThe total area of your floorplan is {sumArea}m.\n");
+
+      return sumArea;
     }
 
     static List<string> NumListGenerator(Match match, string pattern)
@@ -61,16 +63,16 @@ namespace Floorplan_Cost_Calculator
     }
 
     static void CalculateTotalCost(double area){
-      Console.WriteLine("What currency would you like to use to calculate the total of the property?")
+      Console.WriteLine("\n\nWhat currency would you like to use to calculate the total cost of the property? [USD/GBP/..]  ");
       char currency = Console.ReadLine();
 
-      Console.WriteLine("What is the price of the property per square meter?");
+      Console.WriteLine("\n\nWhat is the price of the property per square meter?  ");
       double rate = Console.ReadLine();
 
       if (area != 0) {
         cost = rate * area;
       	cost = Math.Round(cost, 2);
-      	Console.WriteLine($"The total cost of your floorplan with the area of {area}m is {cost}{currency}");  
+      	Console.WriteLine($"\n\nThe total cost of your floorplan with the area of {area}m is {cost} {currency}.\n");  
       }
 
     }
