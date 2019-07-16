@@ -11,9 +11,10 @@ A commandline c# calculator that calculates area of a floorplan and returns its 
 ## Usage
 
 1. Divide up the floorplan into rectangles, triangles and ellipses(or circles).
+2. `cd` into the `Floorplan Cost Calculator` folder.
 2. Create a new console dotnet project using `dotnet new console`. Make sure you have the latest version of `.net` installed.
 3. Delete the default entry file `Program.cs`.
-4. Start the programme in your terminal using `dotnet run` after `cd`ing into the `Floorplan Cost Calculator` folder.
+4. Start the programme in your terminal using `dotnet run`.
 5. Define your area in the following input format when prompted: `R(x1,y1) -R(x2,y2) ... T(b1, h1) -T(b2,h2) ... E(r1, r1) -E(r2, r2)`.
 6. Define your currency.
 7. Define the price of the property per square meter.
@@ -27,7 +28,7 @@ The command in step #3 is broken down as follows:
 - `E(r1, r2)` calculates an area of an ellipse with the radii size of `r1` and `r2`, then adds it to the total area.
 - `-` indicates substraction of the calculated area from the total area.
 
-> Note: If `r1=r2`, you have a circle.
+> Note: If `r1=r2`, the ellipse becomes a circle.
 
 ## Sample Output
 
@@ -91,7 +92,7 @@ How many rectangles (R), Trianges (T) and Ellipses (E) does your area have and w
 Input your answer in the following format: R(x1,y1) -R(x2,y2) ... T(b1, h1) -T(b2,h2) ... E(r1, r1) -E(r2, r2)
 Please note all units shall be in meters.
 
-E(3,4)
+> E(3,4)
 
 The total area of your floorplan is 37.7m^2.
 
