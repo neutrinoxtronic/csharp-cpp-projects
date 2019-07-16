@@ -18,7 +18,7 @@ A commandline c# calculator that calculates area of a floorplan and returns its 
 6. Define your area in the following input format when prompted: 
 
 ```
-R(x1,y1) -R(x2,y2) ... T(b1, h1) -T(b2,h2) ... E(r1, r1) -E(r2, r2)
+R(x1,y1) -R(x2,y2) ... T(b1, h1) -T(b2,h2) ... E(ra1, rb1) -E(ra2, rb2)
 ```
 
 7. Define your currency.
@@ -35,7 +35,7 @@ The command in step #3 is broken down as follows:
 
 - `R(x, y)` calculates an area of a rectangle with edge sizes of `x` and `y`, then adds it to the total area.
 - `T(b, h)` calculates an area of a triangle with the base size of `b` and height of `h`, then adds it to the total area.
-- `E(r1, r2)` calculates an area of an ellipse with the radii size of `r1` and `r2`, then adds it to the total area.
+- `E(ra, rb)` calculates an area of an ellipse with the radii sizes of `ra` and `rb`, then adds it to the total area.
 - `-` indicates substraction of the calculated area from the total area.
 
 > Note: If `r1=r2`, the ellipse becomes a circle.
@@ -48,7 +48,7 @@ $ dotnet run
 Starting Area Calculator...
 
 How many rectangles (R), Trianges (T) and Ellipses (E) does your area have and what are the sizes of each?
-Input your answer in the following format: R(x1,y1) -R(x2,y2) ... T(b1, h1) -T(b2,h2) ... E(r1, r1) -E(r2, r2)
+Input your answer in the following format: R(x1,y1) -R(x2,y2) ... T(b1, h1) -T(b2,h2) ... E(ra1, rb1) -E(ra2, rb2)
 Please note all units shall be in meters.
 
 > E(2,3) E(3,3) R(5, 10) T(10, 5)
@@ -76,7 +76,7 @@ $ dotnet run
 Starting Area Calculator...
 
 How many rectangles (R), Trianges (T) and Ellipses (E) does your area have and what are the sizes of each?
-Input your answer in the following format: R(x1,y1) -R(x2,y2) ... T(b1, h1) -T(b2,h2) ... E(r1, r1) -E(r2, r2)
+Input your answer in the following format: R(x1,y1) -R(x2,y2) ... T(b1, h1) -T(b2,h2) ... E(ra1, rb1) -E(ra2, rb2)
 Please note all units shall be in meters.
 
 > R(2,3) -R(2,1)
@@ -99,7 +99,7 @@ Would you like to calculate another area? [y/n]
 Starting Area Calculator...
 
 How many rectangles (R), Trianges (T) and Ellipses (E) does your area have and what are the sizes of each?
-Input your answer in the following format: R(x1,y1) -R(x2,y2) ... T(b1, h1) -T(b2,h2) ... E(r1, r1) -E(r2, r2)
+Input your answer in the following format: R(x1,y1) -R(x2,y2) ... T(b1, h1) -T(b2,h2) ... E(ra1, rb1) -E(ra2, rb2)
 Please note all units shall be in meters.
 
 > E(3,4)
