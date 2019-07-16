@@ -22,6 +22,11 @@ R(x1,y1) -R(x2,y2) ... T(b1, h1) -T(b2,h2) ... E(r1, r1) -E(r2, r2)
 ```
 
 7. Define your currency.
+
+```
+USD/GBP/...
+```
+
 8. Define the price of the property per square meter.
 
 ## Application Input Format
