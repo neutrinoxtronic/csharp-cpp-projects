@@ -2,7 +2,7 @@
 
 A commandline c# calculator that calculates area of a floorplan and returns its cost. This application:
 
-- Accepts the number of rectangles, circles and triangles in a floorplan and their associated sizes to calculate the total area.
+- Accepts the number of rectangles, circles and triangles in a floorplan and their associated sizes in meters to calculate the total area in square meters.
 - Accepts a user-defined cost per unit area when calculating the costs.
 - Accepts a user-defined currency and calculates the cost in that currency.
 
@@ -32,10 +32,10 @@ Please note all units shall be in meters.
 
 R(10, 10) T(10, 4) C(5) R(5, 5)
 
-The total area of your floorplan is 223.5m.
+The total area of your floorplan is 223.5m^2.
 
 What currency would you like to use to calculate the total cost of the property? [USD/GBP/..]  GBP
 What is the price of the property per square meter?  95
 
-The total cost of your floorplan with the area of 223.5m is 21232.5 GBP.
+The total cost of your floorplan with the area of 223.5m^2 is 21232.5 GBP.
 ```
