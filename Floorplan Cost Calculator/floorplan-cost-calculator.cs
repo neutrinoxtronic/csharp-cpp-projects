@@ -59,10 +59,6 @@ namespace Floorplan_Cost_Calculator
       return list;   
     }
 
-    {
-
-    } 
-
     static void CalculateTotalCost(){
       Console.WriteLine("Select from one of the following plans:");
       Console.WriteLine("Teotihaucan");
