@@ -16,7 +16,7 @@ A commandline c# calculator that calculates area of a floorplan and returns its 
 
 ## C# Project - Creature Constructor
 
-A command line c# application that prints ascii creatures by constructing their bodies on piece at the time. The body parts of the creatures can be pieced together randomly or be user-defined. If user does not define a body part, a random body part will be assigned to the creature before printing it.
+A command line c# application that prints ascii creatures by constructing their bodies one piece at the time. The body parts of the creatures can be pieced together randomly or be user-defined. If user does not define a body part, a random body part will be assigned to the creature before printing it.
 
 ## C++ Project - Quadratic Root Calculator
 
