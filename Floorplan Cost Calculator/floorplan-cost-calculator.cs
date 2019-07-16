@@ -37,7 +37,7 @@ namespace Floorplan_Cost_Calculator
     {
       Console.WriteLine("\nStarting Area Calculator...\n");
       Console.WriteLine("How many rectangles (R), Trianges (T) and Ellipses (E) does your area have and what are the sizes of each?");
-      Console.WriteLine("Input your answer in the following format: R(x1,y1) -R(x2,y2) ... T(b1, h1) -T(b2,h2) ... E(r1, r1) -E(r2, r2)");
+      Console.WriteLine("Input your answer in the following format: R(x1,y1) -R(x2,y2) ... T(b1, h1) -T(b2,h2) ... E(ra1, rb1) -E(ra2, rb2)");
       Console.WriteLine("Please note all units shall be in meters. \n");
 
       string instruction = Console.ReadLine();
