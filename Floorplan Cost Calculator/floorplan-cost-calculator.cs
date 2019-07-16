@@ -48,7 +48,7 @@ namespace Floorplan_Cost_Calculator
         }
       }
       
-      Console.WriteLine($"\nThe total area of your floorplan is {sumArea}m.\n");
+      Console.WriteLine($"\nThe total area of your floorplan is {sumArea}m^2.\n");
 
       return sumArea;
     }
@@ -72,7 +72,7 @@ namespace Floorplan_Cost_Calculator
       if (area != 0) {
         cost = rate * area;
       	cost = Math.Round(cost, 2);
-      	Console.WriteLine($"\n\nThe total cost of your floorplan with the area of {area}m is {cost} {currency}.\n");  
+      	Console.WriteLine($"\n\nThe total cost of your floorplan with the area of {area}m^2 is {cost} {currency}.\n");  
       }
 
     }
