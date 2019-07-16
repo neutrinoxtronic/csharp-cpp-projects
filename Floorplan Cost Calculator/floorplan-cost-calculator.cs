@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
+
 
 namespace Floorplan_Cost_Calculator
 {
@@ -6,73 +9,148 @@ namespace Floorplan_Cost_Calculator
   {
     public static void Main(string[] args)
     {
-      double totalarea = CalculateTotalArea();
-      CalculateTotalCost(totalarea);
+      bool run = true;
+      while (run)
+      {
+        double totalarea = CalculateTotalArea();
+
+        Console.WriteLine("Would you like to calculate the associated costs as well? [y/n]");
+        string calculateCost = Console.ReadLine();
+
+        if(calculateCost.ToLower() == "y")
+        {
+          CalculateTotalCost(totalarea);
+        }
+
+        Console.WriteLine("\nWould you like to calculate another area? [y/n]");
+        string calculateAnotherArea = Console.ReadLine();
+
+        if(calculateAnotherArea.ToLower() == "n")
+        {
+          return;
+        }
+      }
+      
     }
 
     static double CalculateTotalArea()
     {
-      Console.WriteLine("Starting Area Calculator...\n");
-      Console.WriteLine("How many rectangles (R), Trianges (T) and Circles (C) does your area have and what are the sizes of each?\n");
-      Console.WriteLine("Input your answer in the following format: R(x1,y1) R(x2,y2) ... T(b1, h1) T(b2,h2) ... C(r1) C(r2)\n");
-      Console.WriteLine("Please note all units shall be in meters. \n\n");
+      Console.WriteLine("\nStarting Area Calculator...\n");
+      Console.WriteLine("How many rectangles (R), Trianges (T) and Ellipses (E) does your area have and what are the sizes of each?");
+      Console.WriteLine("Input your answer in the following format: R(x1,y1) -R(x2,y2) ... T(b1, h1) -T(b2,h2) ... E(r1, r1) -E(r2, r2)");
+      Console.WriteLine("Please note all units shall be in meters. \n");
+
       string instruction = Console.ReadLine();
-      string pattern1 = "[RTC]\(\d+\s*,\s*\d+\)";
-      string pattern2 = "\d+";
+      string pattern1 = "[-]*[RTE]\\(\\d+\\s*,\\s*\\d+\\)";
+      string pattern2 = "\\d+";
+      string matchValue;
+      char matchType;
+      List<string> num_list = new List<string>();
       double sumArea = 0;
 
-      // Match match = Regex.Match("Item 3: #item3#", "#[^#]+#");
-      // if (match.Success) {
-      //     Console.WriteLine(match.Captures[0].Value); // Will output "#item3#"
-      
       // Call Matches method without specifying any options.
-      foreach (Match match1 in Regex.Matches(instruction, pattern1))
+      Match match = Regex.Match(instruction, pattern1);
+      while (match.Success) 
       {
-        switch(match1.value[0])
+
+        matchValue = match.Groups[0].Captures[0].Value;
+
+        if(matchValue[0] == '-' )
         {
-          case "R":
+          matchType = matchValue[1];
+        }
+
+        else 
+        {
+          matchType = matchValue[0];
+        }
+
+        num_list = NumListGenerator(matchValue, pattern2);
+
+        switch(matchType)
+        {
+          case 'R':
+            if(matchValue[0] == '-' )
+              {
+                sumArea -= Rect(Int32.Parse(num_list[0]), Int32.Parse(num_list[1]));
+              }
+              else
+              {
+                sumArea += Rect(Int32.Parse(num_list[0]), Int32.Parse(num_list[1]));
+              }
             break;
-            num_list = NumListGenerator(Match match1, string pattern2);
-            sumArea += Rect(Int32.Parse(num_list[0]), Int32.Parse(num_list[1]));
-          case "T":
+
+          case 'T':
+            if(matchValue[0] == '-' )
+              {
+                sumArea -= Triangle(Int32.Parse(num_list[0]), Int32.Parse(num_list[1]));
+              }
+              else
+              {
+                sumArea += Triangle(Int32.Parse(num_list[0]), Int32.Parse(num_list[1]));
+              }
+
             break;
-            num_list = NumListGenerator(Match match1, string pattern2);
-            sumArea += Triangle(Int32.Parse(num_list[0]), Int32.Parse(num_list[1]));
-          case "C":
+
+          case 'E':
+            if(matchValue[0] == '-' )
+              {
+                sumArea -= Ellipse(Int32.Parse(num_list[0]), Int32.Parse(num_list[1]));
+              }
+              else
+              {
+                sumArea += Ellipse(Int32.Parse(num_list[0]), Int32.Parse(num_list[1]));
+              }
+            
             break;
-            num_list = NumListGenerator(Match match1, string pattern2);
-            sumArea += Circle(Int32.Parse(num_list[0]));
+
           default:
             Console.WriteLine("Invalid Input. Try Again\n");
             break;
         }
-      }
+
+        match = match.NextMatch();
+
+      }  
       
+      // sumArea = CalculateShapeArea();
+      sumArea = Math.Round(sumArea, 2);
       Console.WriteLine($"\nThe total area of your floorplan is {sumArea}m^2.\n");
 
       return sumArea;
     }
 
-    static List<string> NumListGenerator(Match match, string pattern)
+    static List<string> NumListGenerator(string matchValue, string pattern)
     {
-      List<string> list = new List<string>;
-      foreach (Match match2 in Regex.Matches(match.value[0], pattern))
-        list.Add(match2.value);
 
+      List<string> list = new List<string>();
+      Match match = Regex.Match(matchValue, pattern);
+      while (match.Success) 
+      {
+        list.Add(match.Groups[0].Captures[0].Value);
+        match = match.NextMatch();
+      };
+      
       return list;   
     }
 
     static void CalculateTotalCost(double area){
-      Console.WriteLine("\n\nWhat currency would you like to use to calculate the total cost of the property? [USD/GBP/..]  ");
-      char currency = Console.ReadLine();
+      Console.WriteLine("What currency would you like to use to calculate the total cost of the property? [USD/GBP/..]  ");
+      string currency = Console.ReadLine();
 
-      Console.WriteLine("\n\nWhat is the price of the property per square meter?  ");
-      double rate = Console.ReadLine();
+      Console.WriteLine("\nWhat is the price of the property per square meter?  ");
+      double rate = Convert.ToDouble(Console.ReadLine());
 
       if (area != 0) {
-        cost = rate * area;
+        double cost = rate * area;
       	cost = Math.Round(cost, 2);
-      	Console.WriteLine($"\n\nThe total cost of your floorplan with the area of {area}m^2 is {cost} {currency}.\n");  
+        area = Math.Round(area, 2);
+      	Console.WriteLine($"\nThe total cost of your floorplan with the area of {area}m^2 is {cost} {currency}.\n");  
+      }
+
+      else
+      {
+        Console.WriteLine("\nCalculated area is 0. Are you sure you are inputting your data correctly?");
       }
 
     }
@@ -81,8 +159,8 @@ namespace Floorplan_Cost_Calculator
       return length * width;
     }
     
-    static double Circle(double radius){
-      return Math.PI * Math.Pow(radius, 2);
+    static double Ellipse(double radius1, double radius2){
+      return Math.PI * radius1 * radius2;
     }
     
     static double Triangle (double bottom, double height){
