@@ -6,10 +6,11 @@ namespace Floorplan_Cost_Calculator
   {
     public static void Main(string[] args)
     {
-			CalculateArea();
+      double totalarea = CalculateArea();
+      CalculateTotalCost(totalarea);
     }
 
-    static void CalculateArea()
+    static double CalculateArea()
     {
       Console.WriteLine("Starting Area Calculator...");
       Console.WriteLine("How many rectangles (R), Trianges (T) and Circles (C) does your area have and what are the sizes of each?");
@@ -59,34 +60,17 @@ namespace Floorplan_Cost_Calculator
       return list;   
     }
 
-    static void CalculateTotalCost(){
-      Console.WriteLine("Select from one of the following plans:");
-      Console.WriteLine("Teotihaucan");
-      Console.WriteLine("Taj Mahal");
-      Console.WriteLine("Al-Masjid al-haram");
-      string plan = Console.ReadLine();
-      double area = 0;
-      double cost = 0;
-      switch (plan){
-        case "Teotihaucan":
-          area = Rect(1500, 2500) + 0.5* Circle(375) + Triangle(750, 500);
-          break;
-        case "Taj Mahal":
-          area = Rect(1500, 2500) + 0.5* Circle(375) + Triangle(750, 500);
-          break;
-        case "Al-Masjid al-haram":
-          area = Rect(1500, 2500) + 0.5* Circle(375) + Triangle(750, 500);
-          break;
-        default:
-          Console.WriteLine("Please select a valid floorplan");
-          CalculateTotalCost();
-          break;
-      }
-      
+    static void CalculateTotalCost(double area){
+      Console.WriteLine("What currency would you like to use to calculate the total of the property?")
+      char currency = Console.ReadLine();
+
+      Console.WriteLine("What is the price of the property per square meter?");
+      double rate = Console.ReadLine();
+
       if (area != 0) {
-        cost = 180 * area;
+        cost = rate * area;
       	cost = Math.Round(cost, 2);
-      	Console.WriteLine($"The total cost of the {plan} is {cost} pesos");  
+      	Console.WriteLine($"The total cost of your floorplan with the area of {area}m is {cost}{currency}");  
       }
 
     }
