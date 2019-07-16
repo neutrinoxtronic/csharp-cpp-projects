@@ -16,7 +16,9 @@ A commandline c# calculator that calculates area of a floorplan and returns its 
 3. Delete the default entry file `Program.cs`.
 4. Start the programme in your terminal using `dotnet run`.
 5. Define your area in the following input format when prompted: 
+
 `R(x1,y1) -R(x2,y2) ... T(b1, h1) -T(b2,h2) ... E(r1, r1) -E(r2, r2)`.
+
 6. Define your currency.
 7. Define the price of the property per square meter.
 
