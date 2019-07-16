@@ -18,7 +18,7 @@ A commandline c# calculator that calculates area of a floorplan and returns its 
 ## Application Input Format
 
 The command in step #3 is broken down as follows: 
-- `R(x, y)` indicates a rectangles with edge sizes of `x` and `y`.
+- `R(x, y)` indicates a rectangle with edge sizes of `x` and `y`.
 - `T(b, h)` indicates a triangle with the base size of `b` and height of `h`.
 - `C(r)` indicates a circle with the radius size of `r`.
 
